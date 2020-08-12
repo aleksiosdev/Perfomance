@@ -9,52 +9,41 @@
 import Foundation
 import UIKit
 import LoremIpsum
+import AVKit
+import AVFoundation
+
+class PlayerView: UIView {
+	override static var layerClass: AnyClass {
+		return AVPlayerLayer.self
+	}
+
+	var playerLayer: AVPlayerLayer {
+		return layer as! AVPlayerLayer
+	}
+
+	var player: AVPlayer? {
+		get {
+			return playerLayer.player
+		}
+
+		set {
+			playerLayer.player = newValue
+		}
+	}
+}
 
 class VideoCell: TextCell {
-	let horizontalButtonStack: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .horizontal
-		stackView.spacing = 8
-		stackView.distribution = .fillEqually
-		stackView.isOpaque = true
-		return stackView
-	}()
-
-	let verticalButtonStack: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .vertical
-		stackView.spacing = 8
-		stackView.distribution = .fillEqually
-		stackView.isOpaque = true
-		return stackView
-	}()
-
+	let playerView = PlayerView()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
 		textStackView.translatesAutoresizingMaskIntoConstraints = false
-		textStackView.addArrangedSubview(verticalButtonStack)
-
-		["YES", "NO", "MAYBE"].forEach { (string) in
-			let button = UIButton(type: .system)
-			button.setTitle(string, for: .normal)
-			button.backgroundColor = .gray
-			button.layer.cornerRadius = 8
-			button.setTitleColor(.white, for: .normal)
-			horizontalButtonStack.addArrangedSubview(button)
-		}
-		verticalButtonStack.addArrangedSubview(horizontalButtonStack)
-
-		let button = UIButton(type: .system)
-		button.setTitle("Remind button", for: .normal)
-		button.backgroundColor = .blue
-		button.layer.cornerRadius = 8
-		button.setTitleColor(.white, for: .normal)
-		verticalButtonStack.addArrangedSubview(button)
+		textStackView.addArrangedSubview(playerView)
 
 		NSLayoutConstraint.activate([
-			verticalButtonStack.heightAnchor.constraint(equalToConstant: 64)
+			playerView.heightAnchor.constraint(equalToConstant: 160),
+			playerView.widthAnchor.constraint(equalToConstant: 160)
 		])
 	}
 
@@ -66,5 +55,8 @@ class VideoCell: TextCell {
 		super.configure()
 		titleLabel.text = LoremIpsum.name
 		descriptionLabel.text = LoremIpsum.lastName
+		let avPlayer = AVPlayer(url: Bundle.main.url(forResource: "Sea", withExtension: "mp4")!)
+		playerView.playerLayer.player = avPlayer
+		avPlayer.play()
 	}
 }

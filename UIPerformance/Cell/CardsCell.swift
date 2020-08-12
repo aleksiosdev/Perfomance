@@ -10,7 +10,13 @@ import UIKit
 import LoremIpsum
 
 class CardsCell: TextCell {
-	let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+	let collectionView: UICollectionView = {
+		let flowLayout = UICollectionViewFlowLayout()
+		flowLayout.scrollDirection = .horizontal
+		flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+		return collectionView
+	}()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -47,7 +53,6 @@ fileprivate class CardCell: UICollectionViewCell, ConfigrableCell {
 		stackView.axis = .vertical
 		stackView.spacing = 8
 		stackView.distribution = .equalSpacing
-		stackView.isOpaque = true
 		return stackView
 	}()
 
@@ -69,7 +74,7 @@ fileprivate class CardCell: UICollectionViewCell, ConfigrableCell {
 
 			imageView.heightAnchor.constraint(equalToConstant: 160),
 
-			contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
+			contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 100)
 		])
 	}
 

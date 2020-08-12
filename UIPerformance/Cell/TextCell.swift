@@ -42,6 +42,7 @@ class TextCell: UICollectionViewCell, ConfigrableCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
+		bubbleImageView.isUserInteractionEnabled = true
 		translatesAutoresizingMaskIntoConstraints = false
 		textStackView.translatesAutoresizingMaskIntoConstraints = false
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = false

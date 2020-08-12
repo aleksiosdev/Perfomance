@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 		collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
 		collectionView.register(CardsCell.self, forCellWithReuseIdentifier: "CardsCell")
 		collectionView.register(ButtonsCell.self, forCellWithReuseIdentifier: "ButtonsCell")
+		collectionView.register(LottieCell.self, forCellWithReuseIdentifier: "LottieCell")
+		collectionView.register(VideoCell.self, forCellWithReuseIdentifier: "VideoCell")
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -41,13 +43,17 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier: String
-        switch indexPath.row % 4 {
+        switch indexPath.row % 5 {
         case 0:
             identifier = "CardsCell"
         case 1:
             identifier = "PhotoCell"
 		case 2:
 			identifier = "ButtonsCell"
+		case 3:
+			identifier = "LottieCell"
+		case 4:
+			identifier = "VideoCell"
         default:
             identifier = "TextCell"
         }
@@ -57,5 +63,4 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
-}
+extension ViewController: UICollectionViewDelegateFlowLayout { }
