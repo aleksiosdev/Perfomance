@@ -21,6 +21,13 @@
 		E2155C2124E26CDE00B01B45 /* FPSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1E24E26CDE00B01B45 /* FPSCounter.swift */; };
 		E2155C2324E27F7800B01B45 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C2224E27F7800B01B45 /* ButtonCell.swift */; };
 		E2155C2524E2818D00B01B45 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C2424E2818D00B01B45 /* VideoCell.swift */; };
+		E251613824E47D6900337D3E /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251613724E47D6900337D3E /* TextModel.swift */; };
+		E251613A24E47DFB00337D3E /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251613924E47DFB00337D3E /* PhotoModel.swift */; };
+		E251613C24E47E2600337D3E /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251613B24E47E2600337D3E /* VideoModel.swift */; };
+		E251613E24E47E4D00337D3E /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251613D24E47E4D00337D3E /* ButtonModel.swift */; };
+		E251614024E47EDF00337D3E /* LottieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251613F24E47EDF00337D3E /* LottieModel.swift */; };
+		E251614224E47F7F00337D3E /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251614124E47F7F00337D3E /* CardsModel.swift */; };
+		E251614424E4801F00337D3E /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251614324E4801F00337D3E /* CellModel.swift */; };
 		E268FA0D24E08CC500E1847E /* LoremIpsum in Frameworks */ = {isa = PBXBuildFile; productRef = E268FA0C24E08CC500E1847E /* LoremIpsum */; };
 		E268FA0F24E08CF400E1847E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268FA0E24E08CF400E1847E /* TextCell.swift */; };
 		E2BDBF5924E3C9C1002E2ABF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E2BDBF5824E3C9C1002E2ABF /* Lottie */; };
@@ -47,6 +54,13 @@
 		E2155C1E24E26CDE00B01B45 /* FPSCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSCounter.swift; sourceTree = "<group>"; };
 		E2155C2224E27F7800B01B45 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		E2155C2424E2818D00B01B45 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		E251613724E47D6900337D3E /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		E251613924E47DFB00337D3E /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		E251613B24E47E2600337D3E /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		E251613D24E47E4D00337D3E /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
+		E251613F24E47EDF00337D3E /* LottieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieModel.swift; sourceTree = "<group>"; };
+		E251614124E47F7F00337D3E /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
+		E251614324E4801F00337D3E /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		E268FA0E24E08CF400E1847E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		E2BDBF5A24E3CA86002E2ABF /* LottieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieCell.swift; sourceTree = "<group>"; };
 		E2BDBF5E24E3CBC0002E2ABF /* Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
@@ -85,6 +99,7 @@
 		D5D0F35024E0137D007098F1 /* UIPerformance */ = {
 			isa = PBXGroup;
 			children = (
+				E251613624E47D5A00337D3E /* Models */,
 				E2BDBF5D24E3CB9F002E2ABF /* FPSCounter */,
 				E2BDBF5C24E3CB94002E2ABF /* Animation */,
 				E25BDD6C24E1D88F00A5F432 /* Cell */,
@@ -98,6 +113,20 @@
 				D5D0F35F24E0137F007098F1 /* Info.plist */,
 			);
 			path = UIPerformance;
+			sourceTree = "<group>";
+		};
+		E251613624E47D5A00337D3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E251613724E47D6900337D3E /* TextModel.swift */,
+				E251613924E47DFB00337D3E /* PhotoModel.swift */,
+				E251613B24E47E2600337D3E /* VideoModel.swift */,
+				E251613D24E47E4D00337D3E /* ButtonModel.swift */,
+				E251614124E47F7F00337D3E /* CardsModel.swift */,
+				E251613F24E47EDF00337D3E /* LottieModel.swift */,
+				E251614324E4801F00337D3E /* CellModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E25BDD6C24E1D88F00A5F432 /* Cell */ = {
@@ -218,13 +247,20 @@
 				E2155C1F24E26CDE00B01B45 /* FPSStatusBarViewController.swift in Sources */,
 				E268FA0F24E08CF400E1847E /* TextCell.swift in Sources */,
 				D5D0F35624E0137D007098F1 /* ViewController.swift in Sources */,
+				E251614224E47F7F00337D3E /* CardsModel.swift in Sources */,
+				E251613E24E47E4D00337D3E /* ButtonModel.swift in Sources */,
 				D5D0F36624E015A4007098F1 /* MyCell.swift in Sources */,
+				E251613A24E47DFB00337D3E /* PhotoModel.swift in Sources */,
+				E251613824E47D6900337D3E /* TextModel.swift in Sources */,
+				E251613C24E47E2600337D3E /* VideoModel.swift in Sources */,
+				E251614424E4801F00337D3E /* CellModel.swift in Sources */,
 				E2155C2524E2818D00B01B45 /* VideoCell.swift in Sources */,
 				D5D0F35224E0137D007098F1 /* AppDelegate.swift in Sources */,
 				E2155C2024E26CDE00B01B45 /* FPSStatusBarWindow.swift in Sources */,
 				E2155C1524E1EE3600B01B45 /* CardsCell.swift in Sources */,
 				E2155C2324E27F7800B01B45 /* ButtonCell.swift in Sources */,
 				E2155C1324E1E78A00B01B45 /* PhotoCell.swift in Sources */,
+				E251614024E47EDF00337D3E /* LottieModel.swift in Sources */,
 				E2BDBF5F24E3CBC0002E2ABF /* Animation.json in Sources */,
 				D54BF42424E021A0009FCBA8 /* SceneDelegate.swift in Sources */,
 			);

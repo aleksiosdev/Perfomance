@@ -36,23 +36,6 @@ class ButtonsCell: TextCell {
 		textStackView.translatesAutoresizingMaskIntoConstraints = false
 		textStackView.addArrangedSubview(verticalButtonStack)
 
-		["YES", "NO", "MAYBE"].forEach { (string) in
-			let button = UIButton(type: .system)
-			button.setTitle(string, for: .normal)
-			button.backgroundColor = .gray
-			button.layer.cornerRadius = 8
-			button.setTitleColor(.white, for: .normal)
-			horizontalButtonStack.addArrangedSubview(button)
-		}
-		verticalButtonStack.addArrangedSubview(horizontalButtonStack)
-
-		let button = UIButton(type: .system)
-		button.setTitle("Remind button", for: .normal)
-		button.backgroundColor = .blue
-		button.layer.cornerRadius = 8
-		button.setTitleColor(.white, for: .normal)
-		verticalButtonStack.addArrangedSubview(button)
-
 		NSLayoutConstraint.activate([
 			verticalButtonStack.heightAnchor.constraint(equalToConstant: 64)
 		])
@@ -62,9 +45,27 @@ class ButtonsCell: TextCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	override func configure() {
-		super.configure()
-		titleLabel.text = LoremIpsum.name
-		descriptionLabel.text = LoremIpsum.lastName
+	func configure(model: ButtonsModel) {
+		model.buttons.first?.forEach { (title) in
+			let button = UIButton(type: .system)
+			button.setAttributedTitle(title, for: .normal)
+			button.backgroundColor = .gray
+			button.layer.cornerRadius = 8
+			button.setTitleColor(.white, for: .normal)
+			horizontalButtonStack.addArrangedSubview(button)
+		}
+		verticalButtonStack.addArrangedSubview(horizontalButtonStack)
+
+		model.buttons.last?.forEach { title in
+			let button = UIButton(type: .system)
+			button.setAttributedTitle(title, for: .normal)
+			button.backgroundColor = .blue
+			button.layer.cornerRadius = 8
+			button.setTitleColor(.white, for: .normal)
+			verticalButtonStack.addArrangedSubview(button)
+		}
+
+		titleLabel.attributedText = model.title
+		descriptionLabel.attributedText = model.description
 	}
 }

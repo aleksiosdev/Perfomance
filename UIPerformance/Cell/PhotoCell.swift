@@ -9,7 +9,7 @@
 import UIKit
 import LoremIpsum
 
-class PhotoCell: UICollectionViewCell, ConfigrableCell {
+class PhotoCell: UICollectionViewCell {
 	let titleLabel: UILabel = {
 		let label = UILabel()
 		label.numberOfLines = 0
@@ -91,9 +91,9 @@ class PhotoCell: UICollectionViewCell, ConfigrableCell {
 		contentView.isOpaque = true
 	}
 
-	func configure() {
-		titleLabel.attributedText = NSAttributedString(string: LoremIpsum.paragraph, attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-		descriptionLabel.attributedText = NSAttributedString(string: LoremIpsum.paragraph, attributes: [.font: UIFont.systemFont(ofSize: 14)])
+	func configure(model: PhotoModel) {
+		titleLabel.attributedText = model.title
+		descriptionLabel.attributedText = model.description
 		LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 600, height: 800)) { [weak self] (image) in
 			self?.avatarImageView.image = image
 			self?.photoImageView.image = image

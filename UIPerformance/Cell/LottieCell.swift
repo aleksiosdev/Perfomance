@@ -13,9 +13,7 @@ import LoremIpsum
 final class LottieCell: TextCell {
 
 	let animationView: AnimationView = {
-		let animation = Animation
-//			.filepath("/Users/aleksandrlavrinenko/Documents/Perfomance/UIPerformance/Animation/Animation.json")
-			.named("Animation")
+		let animation = Animation.named("Animation")
 		let animationView = AnimationView()
 		animationView.animation = animation
 		animationView.contentMode = .scaleAspectFit
@@ -35,10 +33,10 @@ final class LottieCell: TextCell {
 		])
 	}
 
-	override func configure() {
-		titleLabel.text = LoremIpsum.firstName
-		descriptionLabel.text = LoremIpsum.lastName
-		animationView.backgroundBehavior = .pauseAndRestore
+	func configure(model: LottieModel) {
+		titleLabel.attributedText = model.title
+		descriptionLabel.text = ""
+		animationView.animation = model.animation
 	}
 
 	required init?(coder: NSCoder) {

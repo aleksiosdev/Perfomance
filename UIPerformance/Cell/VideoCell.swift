@@ -51,11 +51,10 @@ class VideoCell: TextCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	override func configure() {
-		super.configure()
-		titleLabel.text = LoremIpsum.name
-		descriptionLabel.text = LoremIpsum.lastName
-		let avPlayer = AVPlayer(url: Bundle.main.url(forResource: "Sea", withExtension: "mp4")!)
+	func configure(model: VideoModel) {
+		titleLabel.attributedText = model.title
+		descriptionLabel.text = ""
+		let avPlayer = AVPlayer(url: model.videoURL)
 		playerView.playerLayer.player = avPlayer
 		avPlayer.play()
 	}

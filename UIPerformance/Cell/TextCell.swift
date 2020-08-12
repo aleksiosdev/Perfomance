@@ -13,7 +13,7 @@ protocol ConfigrableCell: UICollectionViewCell {
 	func configure()
 }
 
-class TextCell: UICollectionViewCell, ConfigrableCell {
+class TextCell: UICollectionViewCell {
 	let titleLabel: UILabel = {
 		let label = UILabel()
 		label.numberOfLines = 0
@@ -100,9 +100,9 @@ class TextCell: UICollectionViewCell, ConfigrableCell {
 		contentView.isOpaque = true
 	}
 
-	func configure() {
-		titleLabel.attributedText = NSAttributedString(string: LoremIpsum.paragraph, attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-		descriptionLabel.attributedText = NSAttributedString(string: LoremIpsum.paragraph, attributes: [.font: UIFont.systemFont(ofSize: 14)])
+	func configure(model: TextModel) {
+		titleLabel.attributedText = model.title
+		descriptionLabel.attributedText = model.description
 		LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 800, height: 800)) { [weak self] (image) in
 			self?.sizeToFit()
 			self?.avatarImageView.image = image
