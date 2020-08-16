@@ -45,6 +45,16 @@ class ButtonsCell: TextCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		verticalButtonStack.arrangedSubviews.forEach {
+			verticalButtonStack.removeArrangedSubview($0)
+		}
+		horizontalButtonStack.arrangedSubviews.forEach {
+			horizontalButtonStack.removeArrangedSubview($0)
+		}
+	}
+
 	func configure(model: ButtonsModel) {
 		model.buttons.first?.forEach { (title) in
 			let button = UIButton(type: .system)
