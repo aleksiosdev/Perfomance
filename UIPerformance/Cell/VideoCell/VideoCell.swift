@@ -12,34 +12,30 @@ import LoremIpsum
 import AVKit
 import AVFoundation
 
-class PlayerView: UIView {
-	override static var layerClass: AnyClass {
-		return AVPlayerLayer.self
-	}
+class VideoCell: UICollectionViewCell {
+	let titleLabel: UILabel
+	let descriptionLabel: UILabel
 
-	var playerLayer: AVPlayerLayer {
-		return layer as! AVPlayerLayer
-	}
+	let bubbleImageView: UIImageView
+	let avatarImageView: UIImageView
 
-	var player: AVPlayer? {
-		get {
-			return playerLayer.player
-		}
+	let contentStackView: UIStackView
 
-		set {
-			playerLayer.player = newValue
-		}
-	}
-}
-
-class VideoCell: TextCell {
 	let playerView = PlayerView()
 
 	override init(frame: CGRect) {
+		titleLabel = Self.createTitleLabel()
+		descriptionLabel = Self.createDescriptionLabel()
+		bubbleImageView = Self.createBubbleImageView()
+		avatarImageView = Self.createAvatarImageView()
+		contentStackView = Self.createContentStackView()
+
 		super.init(frame: frame)
 
-		textStackView.translatesAutoresizingMaskIntoConstraints = false
-		textStackView.addArrangedSubview(playerView)
+		configureBaseElements()
+
+		contentStackView.translatesAutoresizingMaskIntoConstraints = false
+		contentStackView.addArrangedSubview(playerView)
 
 		NSLayoutConstraint.activate([
 			playerView.heightAnchor.constraint(equalToConstant: 160),
@@ -59,3 +55,5 @@ class VideoCell: TextCell {
 		avPlayer.play()
 	}
 }
+
+extension VideoCell: BaseCell { }

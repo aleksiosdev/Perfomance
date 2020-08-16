@@ -30,6 +30,8 @@
 		E251614424E4801F00337D3E /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251614324E4801F00337D3E /* CellModel.swift */; };
 		E268FA0D24E08CC500E1847E /* LoremIpsum in Frameworks */ = {isa = PBXBuildFile; productRef = E268FA0C24E08CC500E1847E /* LoremIpsum */; };
 		E268FA0F24E08CF400E1847E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268FA0E24E08CF400E1847E /* TextCell.swift */; };
+		E282759B24E9A5EB00F5FC11 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282759A24E9A5EB00F5FC11 /* BaseCell.swift */; };
+		E282759E24E9A69400F5FC11 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282759D24E9A69400F5FC11 /* PlayerView.swift */; };
 		E2BDBF5924E3C9C1002E2ABF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E2BDBF5824E3C9C1002E2ABF /* Lottie */; };
 		E2BDBF5B24E3CA86002E2ABF /* LottieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BDBF5A24E3CA86002E2ABF /* LottieCell.swift */; };
 		E2BDBF5F24E3CBC0002E2ABF /* Animation.json in Sources */ = {isa = PBXBuildFile; fileRef = E2BDBF5E24E3CBC0002E2ABF /* Animation.json */; };
@@ -62,6 +64,8 @@
 		E251614124E47F7F00337D3E /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		E251614324E4801F00337D3E /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		E268FA0E24E08CF400E1847E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		E282759A24E9A5EB00F5FC11 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		E282759D24E9A69400F5FC11 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		E2BDBF5A24E3CA86002E2ABF /* LottieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieCell.swift; sourceTree = "<group>"; };
 		E2BDBF5E24E3CBC0002E2ABF /* Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
 		E2BDBF6024E3D521002E2ABF /* Sea.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sea.mp4; sourceTree = "<group>"; };
@@ -132,14 +136,32 @@
 		E25BDD6C24E1D88F00A5F432 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E282759C24E9A68300F5FC11 /* VideoCell */,
+				E282759924E9A5D100F5FC11 /* BaseCell */,
 				E268FA0E24E08CF400E1847E /* TextCell.swift */,
 				E2155C2224E27F7800B01B45 /* ButtonCell.swift */,
-				E2155C2424E2818D00B01B45 /* VideoCell.swift */,
 				E2155C1224E1E78A00B01B45 /* PhotoCell.swift */,
 				E2155C1424E1EE3600B01B45 /* CardsCell.swift */,
 				E2BDBF5A24E3CA86002E2ABF /* LottieCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E282759924E9A5D100F5FC11 /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				E282759A24E9A5EB00F5FC11 /* BaseCell.swift */,
+			);
+			path = BaseCell;
+			sourceTree = "<group>";
+		};
+		E282759C24E9A68300F5FC11 /* VideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2155C2424E2818D00B01B45 /* VideoCell.swift */,
+				E282759D24E9A69400F5FC11 /* PlayerView.swift */,
+			);
+			path = VideoCell;
 			sourceTree = "<group>";
 		};
 		E2BDBF5C24E3CB94002E2ABF /* Animation */ = {
@@ -260,6 +282,8 @@
 				E2155C1524E1EE3600B01B45 /* CardsCell.swift in Sources */,
 				E2155C2324E27F7800B01B45 /* ButtonCell.swift in Sources */,
 				E2155C1324E1E78A00B01B45 /* PhotoCell.swift in Sources */,
+				E282759B24E9A5EB00F5FC11 /* BaseCell.swift in Sources */,
+				E282759E24E9A69400F5FC11 /* PlayerView.swift in Sources */,
 				E251614024E47EDF00337D3E /* LottieModel.swift in Sources */,
 				E2BDBF5F24E3CBC0002E2ABF /* Animation.json in Sources */,
 				D54BF42424E021A0009FCBA8 /* SceneDelegate.swift in Sources */,

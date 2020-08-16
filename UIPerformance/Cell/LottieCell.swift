@@ -10,7 +10,14 @@ import UIKit
 import Lottie
 import LoremIpsum
 
-final class LottieCell: TextCell {
+final class LottieCell: UICollectionViewCell {
+	let titleLabel: UILabel
+	let descriptionLabel: UILabel
+
+	let bubbleImageView: UIImageView
+	let avatarImageView: UIImageView
+
+	let contentStackView: UIStackView
 
 	let animationView: AnimationView = {
 		let animationView = AnimationView()
@@ -22,10 +29,18 @@ final class LottieCell: TextCell {
 
 
 	override init(frame: CGRect) {
+		titleLabel = Self.createTitleLabel()
+		descriptionLabel = Self.createDescriptionLabel()
+		bubbleImageView = Self.createBubbleImageView()
+		avatarImageView = Self.createAvatarImageView()
+		contentStackView = Self.createContentStackView()
+
 		super.init(frame: frame)
 
+		configureBaseElements()
+
 		animationView.translatesAutoresizingMaskIntoConstraints = false
-		textStackView.addArrangedSubview(animationView)
+		contentStackView.addArrangedSubview(animationView)
 
 		NSLayoutConstraint.activate([
 			animationView.heightAnchor.constraint(equalToConstant: 160),
@@ -49,3 +64,5 @@ final class LottieCell: TextCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 }
+
+extension LottieCell: BaseCell { }

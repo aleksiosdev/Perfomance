@@ -10,7 +10,15 @@ import Foundation
 import UIKit
 import LoremIpsum
 
-class ButtonsCell: TextCell {
+class ButtonsCell: UICollectionViewCell {
+	let titleLabel: UILabel
+	let descriptionLabel: UILabel
+
+	let bubbleImageView: UIImageView
+	let avatarImageView: UIImageView
+
+	let contentStackView: UIStackView
+
 	let horizontalButtonStack: UIStackView = {
 		let stackView = UIStackView()
 		stackView.axis = .horizontal
@@ -31,10 +39,18 @@ class ButtonsCell: TextCell {
 
 
 	override init(frame: CGRect) {
+		titleLabel = Self.createTitleLabel()
+		descriptionLabel = Self.createDescriptionLabel()
+		bubbleImageView = Self.createBubbleImageView()
+		avatarImageView = Self.createAvatarImageView()
+		contentStackView = Self.createContentStackView()
+
 		super.init(frame: frame)
 
-		textStackView.translatesAutoresizingMaskIntoConstraints = false
-		textStackView.addArrangedSubview(verticalButtonStack)
+		configureBaseElements()
+
+		contentStackView.translatesAutoresizingMaskIntoConstraints = false
+		contentStackView.addArrangedSubview(verticalButtonStack)
 
 		NSLayoutConstraint.activate([
 			verticalButtonStack.heightAnchor.constraint(equalToConstant: 64)
@@ -79,3 +95,5 @@ class ButtonsCell: TextCell {
 		descriptionLabel.attributedText = model.description
 	}
 }
+
+extension ButtonsCell: BaseCell { }

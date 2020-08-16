@@ -9,7 +9,15 @@
 import UIKit
 import LoremIpsum
 
-class CardsCell: TextCell {
+class CardsCell: UICollectionViewCell {
+	let titleLabel: UILabel
+	let descriptionLabel: UILabel
+
+	let bubbleImageView: UIImageView
+	let avatarImageView: UIImageView
+
+	let contentStackView: UIStackView
+
 	let collectionView: UICollectionView = {
 		let flowLayout = UICollectionViewFlowLayout()
 		flowLayout.scrollDirection = .horizontal
@@ -19,10 +27,17 @@ class CardsCell: TextCell {
 	}()
 
 	override init(frame: CGRect) {
+		titleLabel = Self.createTitleLabel()
+		descriptionLabel = Self.createDescriptionLabel()
+		bubbleImageView = Self.createBubbleImageView()
+		avatarImageView = Self.createAvatarImageView()
+		contentStackView = Self.createContentStackView()
+
 		super.init(frame: frame)
 
-		textStackView.translatesAutoresizingMaskIntoConstraints = false
-		textStackView.addArrangedSubview(collectionView)
+		configureBaseElements()
+
+		contentStackView.addArrangedSubview(collectionView)
 
 		collectionView.register(CardCell.self, forCellWithReuseIdentifier: "Card")
 		collectionView.delegate = self
@@ -39,6 +54,8 @@ class CardsCell: TextCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 }
+
+extension CardsCell: BaseCell { }
 
 fileprivate class CardCell: UICollectionViewCell, ConfigrableCell {
 	let imageView: UIImageView = {
