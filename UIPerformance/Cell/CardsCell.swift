@@ -26,6 +26,8 @@ class CardsCell: UICollectionViewCell {
 		return collectionView
 	}()
 
+	var cards: [URL] = []
+
 	override init(frame: CGRect) {
 		titleLabel = Self.createTitleLabel()
 		descriptionLabel = Self.createDescriptionLabel()
@@ -52,6 +54,13 @@ class CardsCell: UICollectionViewCell {
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+
+	func configure(cardsModel: CardsModel) {
+		titleLabel.attributedText = cardsModel.title
+		cards = cardsModel.cards
+
+		collectionView.reloadData()
 	}
 }
 
@@ -115,7 +124,7 @@ extension CardsCell: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 5
+		return cards.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

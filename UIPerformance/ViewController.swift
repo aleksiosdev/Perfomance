@@ -61,7 +61,7 @@ class ViewController: UIViewController {
 			let models: [CellModel] = (0...self.batchLenght).map { number in
 				switch number % 5 {
 				case 0:
-					return TextModel()
+					return CardsModel()
 				case 1:
 					return PhotoModel()
 				case 2:
@@ -110,6 +110,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 		case let lottieModel as LottieModel:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LottieCell", for: indexPath) as! LottieCell
 			cell.configure(model: lottieModel)
+			return cell
+		case let cardsModel as CardsModel:
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardsCell", for: indexPath) as! CardsCell
+			cell.configure(cardsModel: cardsModel)
 			return cell
 		default:
 			fatalError()
