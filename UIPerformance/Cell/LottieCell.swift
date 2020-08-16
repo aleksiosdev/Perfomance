@@ -13,10 +13,10 @@ import LoremIpsum
 final class LottieCell: TextCell {
 
 	let animationView: AnimationView = {
-		let animation = Animation.named("Animation")
 		let animationView = AnimationView()
-		animationView.animation = animation
 		animationView.contentMode = .scaleAspectFit
+		animationView.loopMode = .loop
+		animationView.animationSpeed = 0.5
 		return animationView
 	}()
 
@@ -33,10 +33,16 @@ final class LottieCell: TextCell {
 		])
 	}
 
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		animationView.stop()
+	}
+
 	func configure(model: LottieModel) {
 		titleLabel.attributedText = model.title
 		descriptionLabel.text = ""
 		animationView.animation = model.animation
+		animationView.play()
 	}
 
 	required init?(coder: NSCoder) {
