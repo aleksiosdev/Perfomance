@@ -66,9 +66,11 @@ class ButtonsCell: UICollectionViewCell {
         verticalButtonStack.arrangedSubviews.forEach {
             verticalButtonStack.removeArrangedSubview($0)
         }
+        verticalButtonStack.subviews.forEach({ $0.removeFromSuperview() })
         horizontalButtonStack.arrangedSubviews.forEach {
             horizontalButtonStack.removeArrangedSubview($0)
         }
+        horizontalButtonStack.subviews.forEach({ $0.removeFromSuperview() })
     }
 
     func configure(model: ButtonsModel) {
