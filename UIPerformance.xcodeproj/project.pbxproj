@@ -13,7 +13,6 @@
 		D5D0F35924E0137D007098F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35724E0137D007098F1 /* Main.storyboard */; };
 		D5D0F35B24E0137F007098F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35A24E0137F007098F1 /* Assets.xcassets */; };
 		D5D0F35E24E0137F007098F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35C24E0137F007098F1 /* LaunchScreen.storyboard */; };
-		D5D0F36624E015A4007098F1 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D0F36524E015A4007098F1 /* MyCell.swift */; };
 		E2155C1324E1E78A00B01B45 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1224E1E78A00B01B45 /* PhotoCell.swift */; };
 		E2155C1524E1EE3600B01B45 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1424E1EE3600B01B45 /* CardsCell.swift */; };
 		E2155C1F24E26CDE00B01B45 /* FPSStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1C24E26CDD00B01B45 /* FPSStatusBarViewController.swift */; };
@@ -48,7 +47,6 @@
 		D5D0F35A24E0137F007098F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D0F35D24E0137F007098F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5D0F35F24E0137F007098F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5D0F36524E015A4007098F1 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		E2155C1224E1E78A00B01B45 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E2155C1424E1EE3600B01B45 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		E2155C1C24E26CDD00B01B45 /* FPSStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				D5D0F35124E0137D007098F1 /* AppDelegate.swift */,
 				D5D0F35324E0137D007098F1 /* SceneDelegate.swift */,
 				D5D0F35524E0137D007098F1 /* ViewController.swift */,
-				D5D0F36524E015A4007098F1 /* MyCell.swift */,
 				D5D0F35724E0137D007098F1 /* Main.storyboard */,
 				D5D0F35A24E0137F007098F1 /* Assets.xcassets */,
 				D5D0F35C24E0137F007098F1 /* LaunchScreen.storyboard */,
@@ -271,7 +268,6 @@
 				D5D0F35624E0137D007098F1 /* ViewController.swift in Sources */,
 				E251614224E47F7F00337D3E /* CardsModel.swift in Sources */,
 				E251613E24E47E4D00337D3E /* ButtonModel.swift in Sources */,
-				D5D0F36624E015A4007098F1 /* MyCell.swift in Sources */,
 				E251613A24E47DFB00337D3E /* PhotoModel.swift in Sources */,
 				E251613824E47D6900337D3E /* TextModel.swift in Sources */,
 				E251613C24E47E2600337D3E /* VideoModel.swift in Sources */,

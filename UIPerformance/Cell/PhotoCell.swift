@@ -10,52 +10,59 @@ import UIKit
 import LoremIpsum
 
 class PhotoCell: UICollectionViewCell {
-	let titleLabel: UILabel
-	let descriptionLabel: UILabel
+    let titleLabel: UILabel
+    let descriptionLabel: UILabel
 
-	let bubbleImageView: UIImageView
-	let avatarImageView: UIImageView
+    let bubbleView: UIView
+    let avatarImageView: UIImageView
 
-	let contentStackView: UIStackView
+    let contentStackView: UIStackView
 
-	let photoImageView: UIImageView = {
-		let photoImageView = UIImageView()
-		photoImageView.contentMode = .scaleAspectFit
-		photoImageView.layer.cornerRadius = 6
-		return photoImageView
-	}()
+    let photoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 6
+        imageView.clipsToBounds = true
+        return imageView
+    }()
 
-	override init(frame: CGRect) {
-		titleLabel = Self.createTitleLabel()
-		descriptionLabel = Self.createDescriptionLabel()
-		bubbleImageView = Self.createBubbleImageView()
-		avatarImageView = Self.createAvatarImageView()
-		contentStackView = Self.createContentStackView()
+    override init(frame: CGRect) {
+        titleLabel = Self.createTitleLabel()
+        descriptionLabel = Self.createDescriptionLabel()
+        bubbleView = Self.createBubbleView()
+        avatarImageView = Self.createAvatarImageView()
+        contentStackView = Self.createContentStackView()
 
-		super.init(frame: frame)
+        super.init(frame: frame)
 
-		configureBaseElements()
-		contentStackView.addArrangedSubview(photoImageView)
+        configureBaseElements()
+        contentStackView.addArrangedSubview(photoImageView)
 
-		NSLayoutConstraint.activate([
-			photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor),
-		])
-	}
+        let photoWidth = photoImageView.widthAnchor.constraint(equalToConstant: 100)
+        photoWidth.priority = .defaultLow
+        NSLayoutConstraint.activate([
+            photoWidth,
+            photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor),
+        ])
+    }
 
-	func configure(model: PhotoModel) {
-		titleLabel.attributedText = model.title
-		descriptionLabel.attributedText = model.description
-		LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 600, height: 800)) { [weak self] (image) in
-			self?.avatarImageView.image = image
-			self?.photoImageView.image = image
-		}
+    func configure(model: PhotoModel) {
+        titleLabel.attributedText = model.title
+        descriptionLabel.attributedText = model.description
 
-		layoutIfNeeded()
-	}
+        // FIXME: Misaligned image
+        LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 600, height: 800)) { [weak self] (image) in
+            self?.setAvatar(image)
+            self?.photoImageView.image = image
+            self?.layoutIfNeeded()
+        }
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+        layoutIfNeeded()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension PhotoCell: BaseCell { }
