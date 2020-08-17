@@ -9,47 +9,40 @@
 import UIKit
 import LoremIpsum
 
-protocol ConfigrableCell: UICollectionViewCell {
-	func configure()
-}
-
 class TextCell: UICollectionViewCell {
-	let titleLabel: UILabel
-	let descriptionLabel: UILabel
+    let titleLabel: UILabel
+    let descriptionLabel: UILabel
 
-	let bubbleImageView: UIImageView
-	let avatarImageView: UIImageView
+    let bubbleView: UIView
+    let avatarImageView: UIImageView
 
-	let contentStackView: UIStackView
+    let contentStackView: UIStackView
 
-	override init(frame: CGRect) {
-		titleLabel = Self.createTitleLabel()
-		descriptionLabel = Self.createDescriptionLabel()
-		bubbleImageView = Self.createBubbleImageView()
-		avatarImageView = Self.createAvatarImageView()
-		contentStackView = Self.createContentStackView()
+    override init(frame: CGRect) {
+        titleLabel = Self.createTitleLabel()
+        descriptionLabel = Self.createDescriptionLabel()
+        bubbleView = Self.createBubbleView()
+        avatarImageView = Self.createAvatarImageView()
+        contentStackView = Self.createContentStackView()
 
-		super.init(frame: frame)
+        super.init(frame: frame)
 
-		configureBaseElements()
-	}
+        configureBaseElements()
+    }
 
-	func configure(model: TextModel) {
-		titleLabel.attributedText = model.title
-		descriptionLabel.attributedText = model.description
-		LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 800, height: 800)) { [weak self] (image) in
-			self?.sizeToFit()
-			self?.avatarImageView.image = image
-		}
-	}
+    func configure(model: TextModel) {
+        titleLabel.attributedText = model.title
+        descriptionLabel.attributedText = model.description
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+        // FIXME: Misaligned image
+        LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 800, height: 800)) { [weak self] (image) in
+            self?.setAvatar(image)
+        }
+    }
 
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension TextCell: BaseCell { }

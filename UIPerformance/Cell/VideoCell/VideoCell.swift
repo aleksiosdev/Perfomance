@@ -13,47 +13,48 @@ import AVKit
 import AVFoundation
 
 class VideoCell: UICollectionViewCell {
-	let titleLabel: UILabel
-	let descriptionLabel: UILabel
+    let titleLabel: UILabel
+    let descriptionLabel: UILabel
 
-	let bubbleImageView: UIImageView
-	let avatarImageView: UIImageView
+    let bubbleView: UIView
+    let avatarImageView: UIImageView
 
-	let contentStackView: UIStackView
+    let contentStackView: UIStackView
 
-	let playerView = PlayerView()
+    let playerView = PlayerView()
 
-	override init(frame: CGRect) {
-		titleLabel = Self.createTitleLabel()
-		descriptionLabel = Self.createDescriptionLabel()
-		bubbleImageView = Self.createBubbleImageView()
-		avatarImageView = Self.createAvatarImageView()
-		contentStackView = Self.createContentStackView()
+    override init(frame: CGRect) {
+        titleLabel = Self.createTitleLabel()
+        descriptionLabel = Self.createDescriptionLabel()
+        bubbleView = Self.createBubbleView()
+        avatarImageView = Self.createAvatarImageView()
+        contentStackView = Self.createContentStackView()
 
-		super.init(frame: frame)
+        super.init(frame: frame)
 
-		configureBaseElements()
+        configureBaseElements()
 
-		contentStackView.translatesAutoresizingMaskIntoConstraints = false
-		contentStackView.addArrangedSubview(playerView)
+        contentStackView.addArrangedSubview(playerView)
 
-		NSLayoutConstraint.activate([
-			playerView.heightAnchor.constraint(equalToConstant: 160),
-			playerView.widthAnchor.constraint(equalToConstant: 160)
-		])
-	}
+        NSLayoutConstraint.activate([
+            playerView.heightAnchor.constraint(equalToConstant: 160),
+            playerView.widthAnchor.constraint(equalToConstant: 160)
+        ])
+    }
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-	func configure(model: VideoModel) {
-		titleLabel.attributedText = model.title
-		descriptionLabel.text = ""
-		let avPlayer = AVPlayer(url: model.videoURL)
-		playerView.playerLayer.player = avPlayer
-		avPlayer.play()
-	}
+    func configure(model: VideoModel) {
+        titleLabel.attributedText = model.title
+        descriptionLabel.text = ""
+        let avPlayer = AVPlayer(url: model.videoURL)
+        playerView.player = avPlayer
+
+        // FIXME: Video - Pause/Play when not visible
+        avPlayer.play()
+    }
 }
 
 extension VideoCell: BaseCell { }
