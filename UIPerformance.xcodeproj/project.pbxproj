@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4E1419B1F526AE7C5BDF49 /* Pods_UIPerformance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F034116850B7F6D9548FD444 /* Pods_UIPerformance.framework */; };
 		D54BF42424E021A0009FCBA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D0F35324E0137D007098F1 /* SceneDelegate.swift */; };
 		D5D0F35224E0137D007098F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D0F35124E0137D007098F1 /* AppDelegate.swift */; };
 		D5D0F35624E0137D007098F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D0F35524E0137D007098F1 /* ViewController.swift */; };
 		D5D0F35924E0137D007098F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35724E0137D007098F1 /* Main.storyboard */; };
 		D5D0F35B24E0137F007098F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35A24E0137F007098F1 /* Assets.xcassets */; };
 		D5D0F35E24E0137F007098F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D0F35C24E0137F007098F1 /* LaunchScreen.storyboard */; };
+		D5DA3C5324EA90A800024F59 /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA3C5224EA90A800024F59 /* TextureViewController.swift */; };
+		D5DA3C5624EAA31D00024F59 /* BaseCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA3C5524EAA31D00024F59 /* BaseCellNode.swift */; };
+		D5DA3C5824EAA33700024F59 /* TextCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA3C5724EAA33700024F59 /* TextCellNode.swift */; };
+		D5DA3C5A24EAA35E00024F59 /* PhotoCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA3C5924EAA35E00024F59 /* PhotoCellNode.swift */; };
 		E2155C1324E1E78A00B01B45 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1224E1E78A00B01B45 /* PhotoCell.swift */; };
 		E2155C1524E1EE3600B01B45 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1424E1EE3600B01B45 /* CardsCell.swift */; };
 		E2155C1F24E26CDE00B01B45 /* FPSStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155C1C24E26CDD00B01B45 /* FPSStatusBarViewController.swift */; };
@@ -39,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4F98593784473C836F3071 /* Pods-UIPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIPerformance.debug.xcconfig"; path = "Target Support Files/Pods-UIPerformance/Pods-UIPerformance.debug.xcconfig"; sourceTree = "<group>"; };
+		ADA878629AC078A63075B91F /* Pods-UIPerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIPerformance.release.xcconfig"; path = "Target Support Files/Pods-UIPerformance/Pods-UIPerformance.release.xcconfig"; sourceTree = "<group>"; };
 		D5D0F34E24E0137D007098F1 /* UIPerformance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPerformance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D0F35124E0137D007098F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5D0F35324E0137D007098F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,10 @@
 		D5D0F35A24E0137F007098F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D0F35D24E0137F007098F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5D0F35F24E0137F007098F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5DA3C5224EA90A800024F59 /* TextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
+		D5DA3C5524EAA31D00024F59 /* BaseCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellNode.swift; sourceTree = "<group>"; };
+		D5DA3C5724EAA33700024F59 /* TextCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCellNode.swift; sourceTree = "<group>"; };
+		D5DA3C5924EAA35E00024F59 /* PhotoCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellNode.swift; sourceTree = "<group>"; };
 		E2155C1224E1E78A00B01B45 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E2155C1424E1EE3600B01B45 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		E2155C1C24E26CDD00B01B45 /* FPSStatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPSStatusBarViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +78,7 @@
 		E2BDBF5A24E3CA86002E2ABF /* LottieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieCell.swift; sourceTree = "<group>"; };
 		E2BDBF5E24E3CBC0002E2ABF /* Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
 		E2BDBF6024E3D521002E2ABF /* Sea.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sea.mp4; sourceTree = "<group>"; };
+		F034116850B7F6D9548FD444 /* Pods_UIPerformance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIPerformance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +88,28 @@
 			files = (
 				E268FA0D24E08CC500E1847E /* LoremIpsum in Frameworks */,
 				E2BDBF5924E3C9C1002E2ABF /* Lottie in Frameworks */,
+				7F4E1419B1F526AE7C5BDF49 /* Pods_UIPerformance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		700060374E5656B3B040B8C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F034116850B7F6D9548FD444 /* Pods_UIPerformance.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5D0F34524E0137D007098F1 = {
 			isa = PBXGroup;
 			children = (
 				D5D0F35024E0137D007098F1 /* UIPerformance */,
 				D5D0F34F24E0137D007098F1 /* Products */,
+				E4931590D37B51FBEBF4A951 /* Pods */,
+				700060374E5656B3B040B8C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +124,7 @@
 		D5D0F35024E0137D007098F1 /* UIPerformance */ = {
 			isa = PBXGroup;
 			children = (
+				D5DA3C5424EAA30900024F59 /* Texture */,
 				E251613624E47D5A00337D3E /* Models */,
 				E2BDBF5D24E3CB9F002E2ABF /* FPSCounter */,
 				E2BDBF5C24E3CB94002E2ABF /* Animation */,
@@ -114,6 +138,17 @@
 				D5D0F35F24E0137F007098F1 /* Info.plist */,
 			);
 			path = UIPerformance;
+			sourceTree = "<group>";
+		};
+		D5DA3C5424EAA30900024F59 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				D5DA3C5224EA90A800024F59 /* TextureViewController.swift */,
+				D5DA3C5524EAA31D00024F59 /* BaseCellNode.swift */,
+				D5DA3C5724EAA33700024F59 /* TextCellNode.swift */,
+				D5DA3C5924EAA35E00024F59 /* PhotoCellNode.swift */,
+			);
+			path = Texture;
 			sourceTree = "<group>";
 		};
 		E251613624E47D5A00337D3E /* Models */ = {
@@ -180,6 +215,15 @@
 			path = FPSCounter;
 			sourceTree = "<group>";
 		};
+		E4931590D37B51FBEBF4A951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F4F98593784473C836F3071 /* Pods-UIPerformance.debug.xcconfig */,
+				ADA878629AC078A63075B91F /* Pods-UIPerformance.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5D0F36224E0137F007098F1 /* Build configuration list for PBXNativeTarget "UIPerformance" */;
 			buildPhases = (
+				32A11B2D6056DD6C818C46D5 /* [CP] Check Pods Manifest.lock */,
 				D5D0F34A24E0137D007098F1 /* Sources */,
 				D5D0F34B24E0137D007098F1 /* Frameworks */,
 				D5D0F34C24E0137D007098F1 /* Resources */,
+				4B0EBE2B6DA7182F4A3D2980 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +302,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32A11B2D6056DD6C818C46D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIPerformance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B0EBE2B6DA7182F4A3D2980 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIPerformance/Pods-UIPerformance-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIPerformance/Pods-UIPerformance-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIPerformance/Pods-UIPerformance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5D0F34A24E0137D007098F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -263,9 +351,13 @@
 			files = (
 				E2BDBF5B24E3CA86002E2ABF /* LottieCell.swift in Sources */,
 				E2155C2124E26CDE00B01B45 /* FPSCounter.swift in Sources */,
+				D5DA3C5324EA90A800024F59 /* TextureViewController.swift in Sources */,
+				D5DA3C5824EAA33700024F59 /* TextCellNode.swift in Sources */,
 				E2155C1F24E26CDE00B01B45 /* FPSStatusBarViewController.swift in Sources */,
 				E268FA0F24E08CF400E1847E /* TextCell.swift in Sources */,
+				D5DA3C5A24EAA35E00024F59 /* PhotoCellNode.swift in Sources */,
 				D5D0F35624E0137D007098F1 /* ViewController.swift in Sources */,
+				D5DA3C5624EAA31D00024F59 /* BaseCellNode.swift in Sources */,
 				E251614224E47F7F00337D3E /* CardsModel.swift in Sources */,
 				E251613E24E47E4D00337D3E /* ButtonModel.swift in Sources */,
 				E251613A24E47DFB00337D3E /* PhotoModel.swift in Sources */,
@@ -424,12 +516,13 @@
 		};
 		D5D0F36324E0137F007098F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F4F98593784473C836F3071 /* Pods-UIPerformance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G24QH82H7;
 				INFOPLIST_FILE = UIPerformance/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,12 +536,13 @@
 		};
 		D5D0F36424E0137F007098F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADA878629AC078A63075B91F /* Pods-UIPerformance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G24QH82H7;
 				INFOPLIST_FILE = UIPerformance/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
