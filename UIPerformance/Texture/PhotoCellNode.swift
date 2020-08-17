@@ -2,8 +2,8 @@
 //  PhotoCellNode.swift
 //  UIPerformance
 //
-//  Created by Sergey Pronin on 8/17/20.
-//  Copyright © 2020 Sergey Pronin. All rights reserved.
+//  Created by Egor T on 8/17/20.
+//  Copyright © 2020 Egor T. All rights reserved.
 //
 
 import Foundation
