@@ -69,7 +69,7 @@ extension BaseCell {
         ])
 
         view.backgroundColor = .white
-        
+
 //        view.layer.cornerRadius = 16
 //        view.layer.shadowRadius = 2
 //        view.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -173,17 +173,5 @@ extension BaseCell {
         imageView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
-    }
-}
-
-
-
-class MyView: UIView {
-    override func draw(_ rect: CGRect) {
-        UIColor.black.setFill()
-        UIBezierPath(roundedRect: rect, cornerRadius: 16)
-            .fill()
-        UIBezierPath(roundedRect: rect, cornerRadius: 16)
-            .addClip()
     }
 }

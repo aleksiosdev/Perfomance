@@ -51,9 +51,6 @@ class VideoCell: UICollectionViewCell {
         descriptionLabel.text = ""
         let avPlayer = AVPlayer(url: model.videoURL)
         playerView.player = avPlayer
-
-        // FIXME: Video - Pause/Play when not visible
-//        avPlayer.play()
     }
 }
 

@@ -18,7 +18,7 @@ class BaseCellNode: ASCellNode {
         textNode.isLayerBacked = true
         return textNode
     }()
-    
+
     let descriptionNode: ASTextNode = {
         let textNode = ASTextNode()
         textNode.backgroundColor = .white
@@ -26,7 +26,7 @@ class BaseCellNode: ASCellNode {
         textNode.isLayerBacked = true
         return textNode
     }()
-    
+
     let avatarNode: ASImageNode = {
         let imageNode = ASImageNode()
         imageNode.style.preferredSize = CGSize(width: 16, height: 16)
@@ -37,7 +37,7 @@ class BaseCellNode: ASCellNode {
         imageNode.backgroundColor = .white
         return imageNode
     }()
-    
+
 //    let bubbleNode: ASDisplayNode = {
 //        let displayNode = ASDisplayNode()
 //        displayNode.backgroundColor = .white
@@ -71,11 +71,11 @@ class BaseCellNode: ASCellNode {
         node.displaysAsynchronously = false
         return node
     }()
-    
+
     override init() {
         super.init()
     }
-    
+
     func prepareTextStack() -> ASStackLayoutSpec {
         let textStack = ASStackLayoutSpec(
             direction: .vertical, spacing: 8, justifyContent: .start, alignItems: .stretch,

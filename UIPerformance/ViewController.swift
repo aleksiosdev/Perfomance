@@ -9,36 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     let batchLength = 200
     var models: [CellModel] = []
     var isLoading: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
-        
+
         models = _loadModels()
-        
+
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+
         collectionView.register(TextCell.self, forCellWithReuseIdentifier: "TextCell")
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
         collectionView.register(CardsCell.self, forCellWithReuseIdentifier: "CardsCell")
         collectionView.register(ButtonsCell.self, forCellWithReuseIdentifier: "ButtonsCell")
         collectionView.register(LottieCell.self, forCellWithReuseIdentifier: "LottieCell")
         collectionView.register(VideoCell.self, forCellWithReuseIdentifier: "VideoCell")
-        
+
         collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        
+
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
-    
+
     private func _loadModels() -> [CellModel] {
         let models: [CellModel] = (0...self.batchLength).map { number in
             switch number % 6 {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
         return models
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -68,7 +68,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = models[indexPath.row]
         switch model {
@@ -112,24 +112,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             fatalError()
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        //		if indexPath.row == models.count - 1 {
-        //			loadModels()
-        //		}
-        
+
         // FIXME: Video - Pause/Play when not visible
         if let videoCell = cell as? VideoCell {
             videoCell.playerView.player?.play()
         }
-        
+
         if let lottieCell = cell as? LottieCell {
             lottieCell.animationView.play()
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -137,7 +134,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         if let videoCell = cell as? VideoCell {
             videoCell.playerView.player?.pause()
         }
-        
+
         // FIXME: Lottie - Pause/Play when not visible
         if let lottieCell = cell as? LottieCell {
             lottieCell.animationView.pause()

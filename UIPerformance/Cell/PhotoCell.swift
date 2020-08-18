@@ -55,7 +55,7 @@ class PhotoCell: UICollectionViewCell {
             self?.photoImageView.image = image
             self?.layoutIfNeeded()
         }
-        
+
         LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 32, height: 32)) { [weak self] (image) in
             self?.setAvatar(image)
         }
