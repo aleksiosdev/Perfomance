@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FPSCounter.showInStatusBar(window: window!)
         
-//        window?.rootViewController = TextureViewController()
+        window?.rootViewController = TextureViewController()
         
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         window?.rootViewController = storyboard.instantiateInitialViewController()

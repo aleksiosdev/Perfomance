@@ -35,7 +35,7 @@ class TextCell: UICollectionViewCell {
         descriptionLabel.attributedText = model.description
 
         // FIXME: Misaligned image
-        LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 800, height: 800)) { [weak self] (image) in
+        LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 32, height: 32)) { [weak self] (image) in
             self?.setAvatar(image)
         }
     }

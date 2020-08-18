@@ -36,8 +36,7 @@ extension BaseCell {
         let label = UILabel()
         label.numberOfLines = 0
 
-        // FIXME: Blending
-//        label.backgroundColor = .white
+        label.backgroundColor = .white
         return label
     }
 
@@ -45,8 +44,7 @@ extension BaseCell {
         let label = UILabel()
         label.numberOfLines = 0
 
-        // FIXME: Blending
-//        label.backgroundColor = .white
+        label.backgroundColor = .white
         return label
     }
 
@@ -61,24 +59,23 @@ extension BaseCell {
         view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        // FIXME: Background using cap insets
-//        let imageView = createCardBackgroundView()
-//        view.addSubview(imageView)
-//        NSLayoutConstraint.activate([
-//            imageView.leftAnchor.constraint(equalTo: view.leftAnchor),
-//            imageView.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            imageView.topAnchor.constraint(equalTo: view.topAnchor),
-//            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//        ])
+        let imageView = createCardBackgroundView()
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
 
         view.backgroundColor = .white
-        view.layer.cornerRadius = 16
-
-        view.layer.shadowRadius = 2
-        view.layer.shadowOffset = CGSize(width: 1, height: 1)
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.6
-        view.layer.masksToBounds = false
+        
+//        view.layer.cornerRadius = 16
+//        view.layer.shadowRadius = 2
+//        view.layer.shadowOffset = CGSize(width: 1, height: 1)
+//        view.layer.shadowColor = UIColor.black.cgColor
+//        view.layer.shadowOpacity = 0.6
+//        view.layer.masksToBounds = false
 
         return view
     }
@@ -166,15 +163,27 @@ extension BaseCell {
     static func createCardBackgroundView() -> UIImageView {
         let imageView = UIImageView()
         imageView.image = #imageLiteral(resourceName: "widget_bg")
+            .opaqueImage(backgroundColor: UIColor(white: 0.95, alpha: 1))
             .resizableImage(
                 withCapInsets: UIEdgeInsets(top: 18, left: 20, bottom: 20, right: 20),
                 resizingMode: .stretch)
         imageView.contentMode = .scaleToFill
 
-        // FIXME: Blending
-//        imageView.isOpaque = true
-//        imageView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        imageView.isOpaque = true
+        imageView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }
+}
+
+
+
+class MyView: UIView {
+    override func draw(_ rect: CGRect) {
+        UIColor.black.setFill()
+        UIBezierPath(roundedRect: rect, cornerRadius: 16)
+            .fill()
+        UIBezierPath(roundedRect: rect, cornerRadius: 16)
+            .addClip()
     }
 }

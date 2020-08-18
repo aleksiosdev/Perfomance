@@ -53,7 +53,7 @@ class VideoCell: UICollectionViewCell {
         playerView.player = avPlayer
 
         // FIXME: Video - Pause/Play when not visible
-        avPlayer.play()
+//        avPlayer.play()
     }
 }
 

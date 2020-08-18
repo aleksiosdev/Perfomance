@@ -52,9 +52,12 @@ class PhotoCell: UICollectionViewCell {
 
         // FIXME: Misaligned image
         LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 600, height: 800)) { [weak self] (image) in
-            self?.setAvatar(image)
             self?.photoImageView.image = image
             self?.layoutIfNeeded()
+        }
+        
+        LoremIpsum.asyncPlaceholderImage(with: CGSize(width: 32, height: 32)) { [weak self] (image) in
+            self?.setAvatar(image)
         }
 
         layoutIfNeeded()

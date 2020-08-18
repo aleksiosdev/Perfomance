@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         FPSCounter.showInStatusBar(windowScene: scene)
         
-//        window?.rootViewController = TextureViewController()
+        window?.rootViewController = TextureViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

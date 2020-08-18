@@ -44,16 +44,16 @@ class ViewController: UIViewController {
             switch number % 6 {
             case 0:
                 return TextModel()
-            case 1:
-                return PhotoModel()
-            case 2:
-                return ButtonsModel()
-            case 3:
-                return LottieModel()
-            case 4:
-                return VideoModel()
+//            case 1:
+//                return PhotoModel()
+//            case 2:
+//                return ButtonsModel()
+//            case 3:
+//                return LottieModel()
+//            case 4:
+//                return VideoModel()
             default:
-                return CardsModel()
+                return PhotoModel()
             }
         }
         return models
@@ -73,27 +73,39 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let model = models[indexPath.row]
         switch model {
         case let textModel as TextModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "TextCell",
+                for: indexPath) as! TextCell
             cell.configure(model: textModel)
             return cell
         case let videoModel as VideoModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCell", for: indexPath) as! VideoCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "VideoCell",
+                for: indexPath) as! VideoCell
             cell.configure(model: videoModel)
             return cell
         case let photoModel as PhotoModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "PhotoCell",
+                for: indexPath) as! PhotoCell
             cell.configure(model: photoModel)
             return cell
         case let buttonsModel as ButtonsModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonsCell", for: indexPath) as! ButtonsCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "ButtonsCell",
+                for: indexPath) as! ButtonsCell
             cell.configure(model: buttonsModel)
             return cell
         case let lottieModel as LottieModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LottieCell", for: indexPath) as! LottieCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "LottieCell",
+                for: indexPath) as! LottieCell
             cell.configure(model: lottieModel)
             return cell
         case let cardsModel as CardsModel:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardsCell", for: indexPath) as! CardsCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "CardsCell",
+                for: indexPath) as! CardsCell
             cell.configure(cardsModel: cardsModel)
             return cell
         default:
@@ -101,32 +113,35 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         //		if indexPath.row == models.count - 1 {
         //			loadModels()
         //		}
         
         // FIXME: Video - Pause/Play when not visible
-        //		if let videoCell = cell as? VideoCell {
-        //			videoCell.playerView.player?.play()
-        //		}
+        if let videoCell = cell as? VideoCell {
+            videoCell.playerView.player?.play()
+        }
         
-        // FIXME: Lottie - Pause/Play when not visible
-        //        if let lottieCell = cell as? LottieCell {
-        //            lottieCell.animationView.play()
-        //        }
+        if let lottieCell = cell as? LottieCell {
+            lottieCell.animationView.play()
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         // FIXME: Video - Pause/Play when not visible
-        //		if let videoCell = cell as? VideoCell {
-        //			videoCell.playerView.player?.pause()
-        //		}
+        if let videoCell = cell as? VideoCell {
+            videoCell.playerView.player?.pause()
+        }
         
         // FIXME: Lottie - Pause/Play when not visible
-        //        if let lottieCell = cell as? LottieCell {
-        //            lottieCell.animationView.pause()
-        //        }
+        if let lottieCell = cell as? LottieCell {
+            lottieCell.animationView.pause()
+        }
     }
 }
 

@@ -57,9 +57,6 @@ final class LottieCell: UICollectionViewCell {
         titleLabel.attributedText = model.title
         descriptionLabel.text = ""
         animationView.animation = model.animation
-
-        // FIXME: Lottie - Pause/Play when not visible
-        animationView.play()
     }
 
     required init?(coder: NSCoder) {

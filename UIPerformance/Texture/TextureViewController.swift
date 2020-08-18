@@ -2,8 +2,8 @@
 //  TextureViewController.swift
 //  UIPerformance
 //
-//  Created by Egor T on 8/17/20.
-//  Copyright © 2020 Egor T. All rights reserved.
+//  Created by Sergey P on 8/17/20.
+//  Copyright © 2020 Sergey P. All rights reserved.
 //
 
 import Foundation
